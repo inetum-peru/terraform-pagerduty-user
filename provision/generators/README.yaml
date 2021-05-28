@@ -5,7 +5,7 @@
 #
 
 # Name of this project
-name: terraform-module-template
+name: terraform-pagerduty-user
 
 # Tags of this project
 tags:
@@ -30,22 +30,22 @@ copyrights:
 license: 'LGPL-3.0'
 
 # Canonical GitHub repo
-github_repo: inetum-peru/terraform-module-template
+github_repo: inetum-peru/terraform-pagerduty-user
 
 # Badges to display
 badges:
   - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/inetum-peru/terraform-module-template?label=latest&sort=semver
-    url: https://github.com/inetum-peru/terraform-module-template/releases
+    image: https://img.shields.io/github/v/tag/inetum-peru/terraform-pagerduty-user?label=latest&sort=semver
+    url: https://github.com/inetum-peru/terraform-pagerduty-user/releases
   - name: Latest Release
-    image: https://img.shields.io/github/release/inetum-peru/terraform-module-template
-    url: https://github.com/inetum-peru/terraform-module-template/releases
+    image: https://img.shields.io/github/release/inetum-peru/terraform-pagerduty-user
+    url: https://github.com/inetum-peru/terraform-pagerduty-user/releases
   - name: Lint
-    image: https://img.shields.io/github/workflow/status/inetum-peru/terraform-module-template/lint-code
-    url: https://github.com/inetum-peru/terraform-module-template/actions
+    image: https://img.shields.io/github/workflow/status/inetum-peru/terraform-pagerduty-user/lint-code
+    url: https://github.com/inetum-peru/terraform-pagerduty-user/actions
   - name: Issues
-    image: https://img.shields.io/github/issues/inetum-peru/terraform-module-template
-    url: https://github.com/inetum-peru/terraform-module-template/issues
+    image: https://img.shields.io/github/issues/inetum-peru/terraform-pagerduty-user
+    url: https://github.com/inetum-peru/terraform-pagerduty-user/issues
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
@@ -56,13 +56,7 @@ badges:
 # Short description of this project
 description: |-
 
-  terraform-module-template for project
-
-  ### Replace name project to New Project
-
-  ```bash
-    agr 'terraform-module-template' 'new-project'
-  ```
+  terraform-pagerduty-user for project
 
   ```hcl
     module "main" {
