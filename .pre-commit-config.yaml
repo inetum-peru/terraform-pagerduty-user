@@ -1,0 +1,85 @@
+repos:
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.0.0
+    hooks:
+      - id: codespell
+        args: [--ignore-words=.codespell-ignores]
+        exclude: >
+          (?x)^(
+            .+\.vendor\/.*$|
+            .+\.node_modules\/.*$|
+            .+\.lock$|
+          )$
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: detect-private-key
+        files: ^(?!\.?git-crypt)
+        exclude: .github/linters/.gitleaks.toml
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+        files: ^tf|-|\.(py|tfvars|tf|tfenv|env|yml|yaml|pem|key|mock)$
+      - id: end-of-file-fixer
+        files: ^tf|-|\.(py|env|yml|yaml|pem|key|mock)$
+      - id: check-added-large-files
+        files: ^tf|-|\.(py|env|yml|yaml)$
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-xml
+      - id: check-yaml
+      - id: check-byte-order-marker
+      - id: check-ast
+      - id: debug-statements
+      - id: check-docstring-first
+      - id: requirements-txt-fixer
+      - id: check-symlinks
+      - id: name-tests-test
+        args:
+          - --django
+      - id: file-contents-sorter
+      - id: fix-encoding-pragma
+      - id: sort-simple-yaml
+  - repo: https://github.com/hadenlabs/pre-commit-hooks
+    rev: e0dd0da9bbbcebe598b0e40121556ab81c539614
+    hooks:
+      - id: do-not-commit
+      - id: markdown-link-check
+        exclude: \.tpl.md$
+      - id: shellcheck
+        exclude: >
+          (?x)^(
+            .+\.provision/git/hooks/prepare-commit-msg$|
+            .+\.tpl.sh$|
+          )$
+        args:
+          - --exclude=SC1072,SC1073,SC2068
+      - id: todocheck
+      - id: gitleaks
+        args:
+          - --path=.
+          - --repo-config-path=.github/linters/.gitleaks.toml
+          - --verbose
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        language: system
+        entry: ./node_modules/prettier/bin-prettier.js
+        args:
+          - '--write=true'
+          - '--config=.github/linters/prettier.config.js'
+          - '--ignore-path=.github/linters/.prettierignore'
+        files: \.(js|jsx|json|ts|tsx|mjs|d.ts|md|yml|yaml|gql|graphql|mjml)$
+        exclude: node_modules
+      - id: eslint
+        name: eslint
+        language: node
+        entry: node_modules/eslint/bin/eslint.js
+        args:
+          - '--fix'
+          - '--color'
+          - '--config=.github/linters/.eslintrc.js'
+          - '--ignore-path=.github/linters/.eslintignore'
+        files: \.(js|jsx|ts|tsx|mjs|d.ts)$
+        exclude: node_modules

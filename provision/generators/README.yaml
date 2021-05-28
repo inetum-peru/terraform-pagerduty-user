@@ -1,0 +1,79 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-module-template
+
+# Tags of this project
+tags:
+  - template
+
+# Categories of this project
+categories:
+  - terraform-modules
+
+email:
+  support: luis.mayta@inetum.world
+
+copyrights:
+  - name: 'inetum'
+    url: 'http://www.gfiworld.com.pe'
+    year: '2018'
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: 'LGPL-3.0'
+
+# Canonical GitHub repo
+github_repo: inetum-peru/terraform-module-template
+
+# Badges to display
+badges:
+  - name: GitHub tag (latest SemVer)
+    image: https://img.shields.io/github/v/tag/inetum-peru/terraform-module-template?label=latest&sort=semver
+    url: https://github.com/inetum-peru/terraform-module-template/releases
+  - name: Latest Release
+    image: https://img.shields.io/github/release/inetum-peru/terraform-module-template
+    url: https://github.com/inetum-peru/terraform-module-template/releases
+  - name: Lint
+    image: https://img.shields.io/github/workflow/status/inetum-peru/terraform-module-template/lint-code
+    url: https://github.com/inetum-peru/terraform-module-template/actions
+  - name: Issues
+    image: https://img.shields.io/github/issues/inetum-peru/terraform-module-template
+    url: https://github.com/inetum-peru/terraform-module-template/issues
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
+
+# Short description of this project
+description: |-
+
+  terraform-module-template for project
+
+  ### Replace name project to New Project
+
+  ```bash
+    agr 'terraform-module-template' 'new-project'
+  ```
+
+  ```hcl
+    module "main" {
+    }
+  ```
+
+  Full working examples can be found in [examples](./examples) folder.
+
+examples:
+  - 'docs/examples/common.md'
+
+include:
+  - 'docs/include/targets.md'
+  - 'docs/include/terraform.md'
