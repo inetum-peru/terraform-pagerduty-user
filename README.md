@@ -21,7 +21,7 @@ terraform-pagerduty-user for project
 ```hcl
   module "main" {
     source = "inetum-peru/user/pagerduty"
-    version = "0.0.0"
+    version = "0.1.0"
     source = "github"
     email = "bot@gmail.com"
     mobile = "51943876543"
