@@ -20,6 +20,12 @@ terraform-pagerduty-user for project
 
 ```hcl
   module "main" {
+    source = "inetum-peru/user/pagerduty"
+    version = "0.0.0"
+    source = "github"
+    email = "bot@gmail.com"
+    mobile = "51943876543"
+    name = "test name"
   }
 ```
 
@@ -36,10 +42,13 @@ Full working examples can be found in [examples](./examples) folder.
 | Name                                                                     | Version |
 | ------------------------------------------------------------------------ | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.13 |
+| <a name="requirement_pagerduty"></a> [pagerduty](#requirement_pagerduty) | >=1.9.6 |
 
 ## Providers
 
-No providers.
+| Name                                                               | Version |
+| ------------------------------------------------------------------ | ------- |
+| <a name="provider_pagerduty"></a> [pagerduty](#provider_pagerduty) | >=1.9.6 |
 
 ## Modules
 
@@ -47,15 +56,26 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+| --- | --- |
+| [pagerduty_user.this](https://registry.terraform.io/providers/PagerDuty/pagerduty/latest/docs/resources/user) | resource |
+| [pagerduty_user_contact_method.email](https://registry.terraform.io/providers/PagerDuty/pagerduty/latest/docs/resources/user_contact_method) | resource |
+| [pagerduty_user_contact_method.phone](https://registry.terraform.io/providers/PagerDuty/pagerduty/latest/docs/resources/user_contact_method) | resource |
 
 ## Inputs
 
-No inputs.
+| Name                                                | Description        | Type     | Default | Required |
+| --------------------------------------------------- | ------------------ | -------- | ------- | :------: |
+| <a name="input_email"></a> [email](#input_email)    | email of user      | `string` | n/a     |   yes    |
+| <a name="input_mobile"></a> [mobile](#input_mobile) | nro mobile of user | `string` | n/a     |   yes    |
+| <a name="input_name"></a> [name](#input_name)       | name of user       | `string` | n/a     |   yes    |
 
 ## Outputs
 
-No outputs.
+| Name                                                     | Description   |
+| -------------------------------------------------------- | ------------- |
+| <a name="output_user"></a> [user](#output_user)          | instance user |
+| <a name="output_user_id"></a> [user_id](#output_user_id) | instance user |
 
 <!-- END_TF_DOCS -->
 
