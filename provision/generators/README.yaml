@@ -60,6 +60,12 @@ description: |-
 
   ```hcl
     module "main" {
+      source = "inetum-peru/user/pagerduty"
+      version = "0.0.0"
+      source = "github"
+      email = "bot@gmail.com"
+      mobile = "51943876543"
+      name = "test name"
     }
   ```
 
