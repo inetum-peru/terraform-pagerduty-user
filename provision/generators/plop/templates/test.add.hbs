@@ -10,12 +10,19 @@ import (
 func Test{{pascalCase testName}}Success(t *testing.T) {
 	t.Parallel()
 
+  name := "test user"
+  email := "luis@yopmail.com"
+  mobile := "959196850"
+
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
-        TerraformDir: "replace-name-{{dashCase testName}}",
+        TerraformDir: "pagerduty-user-{{dashCase testName}}",
 		Upgrade:      true,
-		Vars: map[string]interface{}{
-		},
+		Vars:         map[string]interface{}{
+      "name": name,
+      "email": email,
+      "mobile": mobile,
+    },
 	}
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
