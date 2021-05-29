@@ -53,6 +53,26 @@ repos:
           )$
         args:
           - --exclude=SC1072,SC1073,SC2068
+      - id: validate-toml
+      - id: no-go-testing
+      - id: golangci-lint
+        args:
+          - --fix
+          - --config=.github/linters/.golangci.yml
+      - id: terraform-docs
+        args:
+          - '--output-file=docs/include/terraform.md'
+          - '--output-mode=replace'
+          - '--sort-by-type'
+
+      - id: terraform-tflint
+        args:
+          - '--config=.github/linters/.tflint.hcl'
+      - id: terragrunt-fmt
+      - id: terraform-fmt
+      - id: terraform-tfsec
+
+      - id: checkov
       - id: todocheck
       - id: gitleaks
         args:
